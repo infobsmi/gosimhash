@@ -3,7 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/cnmade/gosimhash"
+
+	"github.com/infobsmi/gosimhash"
 )
 
 var sentence = flag.String("sentence", "今天的天气确实适合户外运动", "Sentence for simhash")

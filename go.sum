@@ -1,5 +1,5 @@
-github.com/cnmade/gosimhash v0.0.0-20171130162857-733e771035c5 h1:xmMRA4cYsDLHJib3IF80do20QLgtcGN0biwk3lj3oQU=
-github.com/cnmade/gosimhash v0.0.0-20171130162857-733e771035c5/go.mod h1:HO6U1zo8sxDHLjgzEESlTDRgtaRVn7iCXlPOxNWdkBY=
+github.com/infobsmi/gosimhash v0.0.0-20171130162857-733e771035c5 h1:xmMRA4cYsDLHJib3IF80do20QLgtcGN0biwk3lj3oQU=
+github.com/infobsmi/gosimhash v0.0.0-20171130162857-733e771035c5/go.mod h1:HO6U1zo8sxDHLjgzEESlTDRgtaRVn7iCXlPOxNWdkBY=
 github.com/dchest/siphash v1.2.2 h1:9DFz8tQwl9pTVt5iok/9zKyzA1Q6bRGiF3HPiEEVr9I=
 github.com/dchest/siphash v1.2.2/go.mod h1:q+IRvb2gOSrUnYoPqHiyHXS0FOBBOdl6tONBlVnOnt4=
 github.com/yanyiwu/gojieba v1.1.2 h1:BMwKCwg3G+Nw/Ctqzm/gNgN/6Ljf0Y4f7ddKlzTA+TM=

@@ -2,9 +2,10 @@ package gosimhash
 
 import (
 	"fmt"
-	"github.com/cnmade/gosimhash/utils"
-	jieba "github.com/yanyiwu/gojieba"
 	"strconv"
+
+	"github.com/infobsmi/gosimhash/utils"
+	jieba "github.com/yanyiwu/gojieba"
 )
 
 const (
@@ -85,9 +86,9 @@ func (simhasher *Simhasher) Free() {
 func CalculateDistanceBySimhash(simhash uint64, another uint64) int {
 	xor := simhash ^ another
 	counter := 0
-	for ; xor != 0; {
+	for xor != 0 {
 		xor &= xor - 1
-		counter ++
+		counter++
 	}
 	return counter
 }
@@ -95,9 +96,9 @@ func CalculateDistanceBySimhash(simhash uint64, another uint64) int {
 func IsSimhashDuplicated(simhash uint64, another uint64, limit int) bool {
 	xor := simhash ^ another
 	counter := 0
-	for ; xor != 0 && counter <= limit; {
+	for xor != 0 && counter <= limit {
 		xor &= xor - 1
-		counter ++
+		counter++
 	}
 	return counter <= limit
 }

@@ -5,14 +5,14 @@
 ## Usage
 
 ```
-go get github.com/cnmade/gosimhash
+go get github.com/infobsmi/gosimhash
 ```
 
 ### Usage of Package
 
 ```golang
 import (
-	"github.com/cnmade/gosimhash"
+	"github.com/infobsmi/gosimhash"
 )
 
 func getSimhash() {
@@ -48,8 +48,8 @@ What's more, you can customize the hash algorithm(currently support siphash and 
 
 ```golang
 import (
-	"github.com/cnmade/gosimhash"
-	"github.com/cnmade/gosimhash/utils"
+	"github.com/infobsmi/gosimhash"
+	"github.com/infobsmi/gosimhash/utils"
 )
 ...
 sip := utils.NewSipHasher([]byte(gosimhash.DEFAULT_HASH_KEY))

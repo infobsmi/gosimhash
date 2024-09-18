@@ -1,43 +1,42 @@
 package gosimhash
 
 import (
-	"github.com/cnmade/gosimhash/utils"
 	"testing"
+
+	"github.com/infobsmi/gosimhash/utils"
 )
 
 func TestNewJiebaSimhasher(t *testing.T) {
 	hasher := NewJiebaSimhasher(nil)
 	defer hasher.Free()
 
-	var sentence  = "【王者荣耀：限制未成年用户游戏时间 单机模式玩法暂时关闭】今日，王者荣耀在其官网发布公告称，在游戏时长限制方面"
+	var sentence = "【王者荣耀：限制未成年用户游戏时间 单机模式玩法暂时关闭】今日，王者荣耀在其官网发布公告称，在游戏时长限制方面"
 	//var another string = "今年的气候确实很糟糕"
-	var another  = "【王者荣耀：限制未成年用户游戏时间 今日，王者荣耀在其官网发布公告称，限400元人民币。"
-	var topN  = 20
+	var another = "【王者荣耀：限制未成年用户游戏时间 今日，王者荣耀在其官网发布公告称，限400元人民币。"
+	var topN = 20
 
 	// make simhash in uint64, like: 0xfa596a42bb35f945
-	var first  = hasher.MakeSimhash(&sentence, topN)
-	var second  = hasher.MakeSimhash(&another, topN)
-	 dist1  := CalculateDistanceBySimhash(first, second)
+	var first = hasher.MakeSimhash(&sentence, topN)
+	var second = hasher.MakeSimhash(&another, topN)
+	dist1 := CalculateDistanceBySimhash(first, second)
 
 	t.Log(first, second, dist1)
 
-	another  = "【王者荣耀：限制未成年用户游戏时间 单机模式玩法暂时关闭】今日，王者荣耀在其官网发布公告称"
-	 f0  := hasher.MakeSimhash(&sentence, topN)
-	 s0  := hasher.MakeSimhash(&another, topN)
-	 dist1 = CalculateDistanceBySimhash(f0, s0)
-	t.Log(first, second, dist1)
-
-
-	another  = "王者荣耀在其官网发布公告称，限400元人民币，限制未成年用户游戏时间"
-	f0  = hasher.MakeSimhash(&sentence, topN)
-	s0  = hasher.MakeSimhash(&another, topN)
+	another = "【王者荣耀：限制未成年用户游戏时间 单机模式玩法暂时关闭】今日，王者荣耀在其官网发布公告称"
+	f0 := hasher.MakeSimhash(&sentence, topN)
+	s0 := hasher.MakeSimhash(&another, topN)
 	dist1 = CalculateDistanceBySimhash(f0, s0)
 	t.Log(first, second, dist1)
 
+	another = "王者荣耀在其官网发布公告称，限400元人民币，限制未成年用户游戏时间"
+	f0 = hasher.MakeSimhash(&sentence, topN)
+	s0 = hasher.MakeSimhash(&another, topN)
+	dist1 = CalculateDistanceBySimhash(f0, s0)
+	t.Log(first, second, dist1)
 
-	another  = "我们之间是完全不可能有任何结果的"
-	f0  = hasher.MakeSimhash(&sentence, topN)
-	s0  = hasher.MakeSimhash(&another, topN)
+	another = "我们之间是完全不可能有任何结果的"
+	f0 = hasher.MakeSimhash(&sentence, topN)
+	s0 = hasher.MakeSimhash(&another, topN)
 	dist1 = CalculateDistanceBySimhash(f0, s0)
 	t.Log(first, second, dist1)
 }

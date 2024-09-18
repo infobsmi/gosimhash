@@ -1,4 +1,4 @@
-module github.com/cnmade/gosimhash
+module github.com/infobsmi/gosimhash
 
 go 1.17
 
